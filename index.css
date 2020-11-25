@@ -6,17 +6,33 @@
     font-family: 'Roboto', sans-serif;
   }
   
-  button, input[type="text"] {
-    padding: 5px;
-  }
-  
   button:hover {
     cursor: pointer;
   }
   
   .container {
     max-width: 600px;
-    margin: 0 auto;
+    margin: auto; 
+    padding: 10px;
+  }
+
+  .search {
+    display: block;
+    padding: 2px;
+  }
+
+  label, button {
+    margin-bottom: 5px;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+  
+  
+  input {
+    margin-bottom: 5px;
+    width: 75px;
   }
   
   .error-message {

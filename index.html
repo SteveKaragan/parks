@@ -6,25 +6,27 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet"
     type="text/css" />
     <link rel="stylesheet" href="./index.css" type="text/css">
-    <title>Display Multiple Dog Images</title>
+    <title>National Parks</title>
 </head>
 <body>
     <div class="container">
-        <h1>YouTube video finder</h1>
+        <h1>National Park Finder</h1>
 
         <form id="js-form">
-            <label for="js-search-term">Search term</label>
-            <input type="text" name="search-term" id="js-search-term" required>
-
-            <label for="js-max-results">Maximum results to return</label>
-            <input type="number" name="max-results" id="js-max-results" value="10">
-
+            <label for="js-search-term">Enter two letter State e.g. NY, enter multiple states with a comma e.g. NY,NJ</label>
+            <input type="text" name="search-term" id="js-search-term" class="search" placeholder="IA,NJ,NY"required>
+            
+            <label for="js-max-results">Max results</label>
+            <input type="number" name="max-results" id="js-max-results" class="search" value="10">
+            
             <input type="submit" value="Go!">
         </form>
-
+        <!-- This part of form conditionaly displays based on errors, and returned searches -->
         <p id="js-error-message" class="error-message"></p>
         <section id="results" class="hidden">
           <h2>Search results</h2>
+          <h3>Please note that some parks are associated with multiple states e.g. Appalachian Trail, 
+              and physical address may be in a different state than your current search.</h3>
           <ul id="results-list">
           </ul>
         </section>
