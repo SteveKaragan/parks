@@ -30,9 +30,24 @@ function displayResults(responseJson) {
   $('#results').removeClass('hidden');
 };
 
+//utilize encodeURIComponent to create query section of URL
+function formatQueryParams(params) {
+  const queryItems = Object.keys(params)
+        .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+  return queryItems.join('&');
+  }
+
 //add parameters to URL, fetch data, error handling
 function getParks(states, maxResults=10) {
-  const url = searchURL + '?' + `stateCode=${states}&limit=${maxResults}&api_key=${apiKey}`
+  const params = {
+    stateCode: states,
+    limit: maxResults,
+    api_key: apiKey,
+  };
+  const queryString = formatQueryParams(params)
+  const url = searchURL + '?' + queryString;
+ 
+
 
   fetch(url)
     .then(response => {
@@ -59,3 +74,5 @@ function watchForm() {
 };
 
 $(watchForm);
+
+
